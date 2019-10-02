@@ -48,12 +48,26 @@ class Tamagotchi {
 };
 
 // Instatiate your Tomagotchi
-const pet = new Tamagotchi('bruin');
-console.log(pet);
+// const pet = new Tamagotchi('bruin');
+// console.log(pet);
 
 // Display a character of your choice on the screen to represent your pet
 $('#tampic').width(219);
 $('#tampic').height(300);
+
+// Add the ability to name your pet.
+const petName = [];
+
+$('form').on('submit', (e) => {
+    // console.log('clicked');  
+    console.log($('#input-box').val());
+    petName.push($('#input-box').val());
+    const $petName = $('#petName');
+    $petName.text(petName[0]);
+    event.preventDefault();
+    $('#input-box').val('');   
+  });
+
 
 
 
