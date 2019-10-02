@@ -35,20 +35,20 @@
 
 // In your app.js file, create a Class
 class Tamagotchi {
-  // constructor(name){
-  //   this.name = name;
-    // this.cardsInHand = [];
-    // this.cardInPlay = [];
-    // this.score = 0;
-    // this.roundsWon = 0;
-  // }
+  constructor(name){
+    this.name = name;
+    this.hunger = 0;
+    this.sleepiness = 0;
+    this.boredom = 0;
+    this.age = 0;
+  }
   // greet(){
   //   console.log('Hi my name is' + this.name);
   // }
 };
 
 // Instatiate your Tomagotchi
-const pet = new Tamagotchi();
+const pet = new Tamagotchi('bruin');
 console.log(pet);
 
 // Display a character of your choice on the screen to represent your pet
