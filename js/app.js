@@ -51,4 +51,10 @@ class Tamagotchi {
 const pet = new Tamagotchi();
 console.log(pet);
 
+// Display a character of your choice on the screen to represent your pet
+$('#tampic').width(219);
+$('#tampic').height(300);
+
+
+
 
