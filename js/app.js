@@ -48,7 +48,7 @@ class Tamagotchi {
 };
 
 // Instatiate your Tomagotchi
-// const pet = new Tamagotchi('bruin');
-// console.log(pet);
+const pet = new Tamagotchi();
+console.log(pet);
 
 
