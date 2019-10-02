@@ -47,10 +47,6 @@ class Tamagotchi {
   // }
 };
 
-// Instatiate your Tomagotchi
-// const pet = new Tamagotchi('bruin');
-// console.log(pet);
-
 // Display a character of your choice on the screen to represent your pet
 $('#tampic').width(219);
 $('#tampic').height(300);
@@ -64,9 +60,16 @@ $('form').on('submit', (e) => {
     petName.push($('#input-box').val());
     const $petName = $('#petName');
     $petName.text(petName[0]);
+    // Instatiate your Tomagotchi
+    const pet = new Tamagotchi(petName[0]);
+    console.log(pet);    
     event.preventDefault();
     $('#input-box').val('');   
   });
+
+// Instatiate your Tomagotchi
+// const pet = new Tamagotchi(petName[0]);
+// console.log(pet);
 
 
 
