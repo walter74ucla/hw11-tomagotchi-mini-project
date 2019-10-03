@@ -68,12 +68,14 @@ class Tamagotchi {
     // grabbing the age span from html
     const $ageTimer = $('#age');
     const interval = setInterval(() =>{
-        this.age++
         if(this.shouldPetDie()){ // check to see if the pet should be dead
           clearInterval(interval); // stops the interval
           return; // stops function by returning undefined, i.e. it does 
                   // not return a value
         }
+        this.age++
+        this.morphPet(); // want to morph the pet based on the age count
+
         // update the age on the dom
         $ageTimer.text(`Age: ${this.age}`)//this is off by 1 on the DOM
     }, 1000) 
@@ -167,6 +169,16 @@ class Tamagotchi {
       }
         $boredomTimer.text(`Boredom: ${this.boredom}`)
   }
+  // Morph your pet at certain ages.
+  morphPet(){
+    if(this.alive){
+      if(this.age === 5){
+        $('#tampic').attr("src","basketballbruin.png");   
+      } else if(this.age === 10){
+          $('#tampic').attr('src', 'footballbruin.png');
+        }
+    }
+  }
 };
   
 // Display a character of your choice on the screen to represent your pet
@@ -186,12 +198,12 @@ $('form').on('submit', (e) => {
     petName = $('#input-box').val();
     const $petName = $('#petName');
     $petName.text(petName);// adds pet name to the DOM   
-    
     pet.name = petName;// updates Tamagotchi name
     pet.setAgeTimer();
     pet.setHungerTimer();
     pet.setSleepinessTimer();
     pet.setBoredomTimer();
+    // pet.morphPet();//still working on this
     console.log(pet); 
     event.preventDefault();
     $('#input-box').val('');   
