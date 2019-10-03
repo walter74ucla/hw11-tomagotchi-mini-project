@@ -1,0 +1,17 @@
+
+
+.form-row {
+	padding: 10px 0;
+	display: flex;
+}
+
+.form-row input {
+	padding-right: 10px;
+	padding-left: 5px;
+	flex: 1;
+}
+
+#input-box {
+	background: #D3D3D3;
+	/*border: 5px solid grey;*/
+}
