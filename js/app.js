@@ -40,7 +40,7 @@ class Tamagotchi {
     this.sleepiness = 0;
     this.boredom = 0;
     this.age = 0;
-    this.alive = true;
+    this.alive = true; // tracks if pet is dead or alive
   }
 
   changeName(name){
@@ -69,12 +69,13 @@ class Tamagotchi {
     const $ageTimer = $('#age');
     const interval = setInterval(() =>{
         this.age++
-        if(this.shouldPetDie()){
+        if(this.shouldPetDie()){ // check to see if the pet should be dead
           clearInterval(interval); // stops the interval
-          return;
+          return; // stops function by returning undefined, i.e. it does 
+                  // not return a value
         }
         // update the age on the dom
-        $ageTimer.text(`Age: ${this.age}`)
+        $ageTimer.text(`Age: ${this.age}`)//this is off by 1 on the DOM
     }, 1000) 
   }
   // Increase your pet's Hunger, Sleepiness, and Bored metrics on an interval of your choosing.
@@ -122,28 +123,49 @@ class Tamagotchi {
         $boredomTimer.text(`Boredom: ${this.boredom}`)
     }, 1750)
   }
+  // You pet should die if Hunger, Boredom, or Sleepiness hits 10.
   shouldPetDie(){
-    if(this.hunger === 10 || this.sleepiness === 10 || this. boredom === 10){
-      
+    if(this.hunger === 10 || this.sleepiness === 10 || this. boredom === 10){      
       return true;
     }
-
     return false;
   }
-
-  killPet()
-  {
-    if (this.alive)
-    {
+  killPet(){
+    if(this.alive){
       const $section = $('<section/>');
       $section.text('Game Over.  Your Pet has died.');
       $('body').prepend($section);
       this.alive = false;
-    }
-    else
-    {
+    } else{
       //do nothing, pet is already dead
-    }
+      }
+  }
+  feedPet(){
+    const $hungerTimer = $('#hunger');
+    if(this.hunger > 0){
+      this.hunger--
+    } else if(this.hunger === 0){
+      alert(this.name + " is not hungry");
+      }
+        $hungerTimer.text(`Hunger: ${this.hunger}`)
+  }
+  turnOffTheLights(){
+    const $sleepinessTimer = $('#sleepiness');
+    if(this.sleepiness > 0){
+      this.sleepiness--
+    } else if(this.sleepiness === 0){
+      alert(this.name + " is not sleepy.  Please keep the lights on.");
+      }
+        $sleepinessTimer.text(`Sleepiness: ${this.sleepiness}`)
+  }
+  playWithPet(){
+    const $boredomTimer = $('#boredom');
+    if(this.boredom > 0){
+      this.boredom--
+    } else if(this.boredom === 0){
+      alert(this.name + " is not bored.");
+      }
+        $boredomTimer.text(`Boredom: ${this.boredom}`)
   }
 };
   
@@ -175,7 +197,23 @@ $('form').on('submit', (e) => {
     $('#input-box').val('');   
   });
 
+// Add button to the screen to feed your pet
+$('#feedPet').on('click', () => {
+  // console.log('button works')
+  pet.feedPet();
+});
 
+// Add button to the screen to turn off the lights
+$('#turnOff').on('click', () => {
+  // console.log('button works')
+  pet.turnOffTheLights();
+});
+
+// Add button to the screen to play with your pet
+$('#play').on('click', () => {
+  // console.log('button works')
+  pet.playWithPet();
+});
 
 //You do not need a game object here...Try to make all functions in 
 // the class and call the functions in the name input form functions
