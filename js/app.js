@@ -32,44 +32,183 @@
 
 
 
-
 // In your app.js file, create a Class
 class Tamagotchi {
-  constructor(name){
+  constructor(){
     this.name = name;
     this.hunger = 0;
     this.sleepiness = 0;
     this.boredom = 0;
     this.age = 0;
+    this.alive = true;
   }
-  // greet(){
-  //   console.log('Hi my name is' + this.name);
-  // }
-};
 
+  changeName(name){
+    //change the name in this.name
+    //change the name in the DOM
+  }
+
+  changeHunger(hunger){
+
+  }
+
+  changeSleepiness(sleepiness){
+
+  }
+
+  changeBoredom(boredom){
+
+  }
+
+  changeAge(age){
+
+  }
+// Increase your pet's age every x minutes
+  setAgeTimer(){     
+    // grabbing the age span from html
+    const $ageTimer = $('#age');
+    const interval = setInterval(() =>{
+        this.age++
+        if(this.shouldPetDie()){
+          clearInterval(interval); // stops the interval
+          return;
+        }
+        // update the age on the dom
+        $ageTimer.text(`Age: ${this.age}`)
+    }, 1000) 
+  }
+  // Increase your pet's Hunger, Sleepiness, and Bored metrics on an interval of your choosing.
+  setHungerTimer(){     
+    // grabbing the hunger span from html
+    const $hungerTimer = $('#hunger');
+    const interval = setInterval(() =>{
+        if(this.shouldPetDie()){
+          clearInterval(interval); // stops the interval
+          this.killPet();
+          return;
+        }
+        this.hunger++
+        // update the hunger on the dom
+        $hungerTimer.text(`Hunger: ${this.hunger}`)
+    }, 1250) 
+  }
+  setSleepinessTimer(){     
+  // Increase your pet's Hunger, Sleepiness, and Bored metrics on an interval of your choosing.
+  // grabbing the sleepiness span from html
+    const $sleepinessTimer = $('#sleepiness');
+    const interval = setInterval(() =>{
+        if(this.shouldPetDie()){
+          clearInterval(interval); // stops the interval
+          this.killPet();
+          return;
+        }
+        this.sleepiness++
+        // update the sleepiness on the dom
+        $sleepinessTimer.text(`Sleepiness: ${this.sleepiness}`)
+    }, 1500) 
+  }
+  setBoredomTimer(){     
+  // Increase your pet's Hunger, Sleepiness, and Bored metrics on an interval of your choosing.
+  // grabbing the bored span from html
+    const $boredomTimer = $('#boredom');
+    const interval = setInterval(() =>{
+        if(this.shouldPetDie()){
+          clearInterval(interval); // stops the interval
+          this.killPet();
+          return;
+        }
+        this.boredom++
+        // update the boredom on the dom
+        $boredomTimer.text(`Boredom: ${this.boredom}`)
+    }, 1750)
+  }
+  shouldPetDie(){
+    if(this.hunger === 10 || this.sleepiness === 10 || this. boredom === 10){
+      
+      return true;
+    }
+
+    return false;
+  }
+
+  killPet()
+  {
+    if (this.alive)
+    {
+      const $section = $('<section/>');
+      $section.text('Game Over.  Your Pet has died.');
+      $('body').prepend($section);
+      this.alive = false;
+    }
+    else
+    {
+      //do nothing, pet is already dead
+    }
+  }
+};
+  
 // Display a character of your choice on the screen to represent your pet
 $('#tampic').width(219);
 $('#tampic').height(300);
 
 // Add the ability to name your pet.
-const petName = [];
+
+let petName = '';
+// Instatiate your Tomagotchi
+let pet = new Tamagotchi('');
+
 
 $('form').on('submit', (e) => {
     // console.log('clicked');  
-    console.log($('#input-box').val());
-    petName.push($('#input-box').val());
+    // console.log($('#input-box').val());
+    petName = $('#input-box').val();
     const $petName = $('#petName');
-    $petName.text(petName[0]);
-    // Instatiate your Tomagotchi
-    const pet = new Tamagotchi(petName[0]);
-    console.log(pet);    
+    $petName.text(petName);// adds pet name to the DOM   
+    
+    pet.name = petName;// updates Tamagotchi name
+    pet.setAgeTimer();
+    pet.setHungerTimer();
+    pet.setSleepinessTimer();
+    pet.setBoredomTimer();
+    console.log(pet); 
     event.preventDefault();
     $('#input-box').val('');   
   });
 
-// Instatiate your Tomagotchi
-// const pet = new Tamagotchi(petName[0]);
-// console.log(pet);
+
+
+//You do not need a game object here...Try to make all functions in 
+// the class and call the functions in the name input form functions
+// const game = {
+//   setAgeTimer(){
+//     // Increase your pet's age every x minutes
+//     // grabbing the age span from html
+//     const $timer = $('#age');
+
+//     const interval = setInterval(() =>{
+
+//         while(pet.age <= 10){
+//           pet.age++
+
+//           clearInterval(interval); // stops the interval
+//         } 
+//         // update the age on the dom
+//         $timer.text(`age: ${pet.age}`)
+
+//     }, 1000) 
+//   }
+// }
+
+// game.setAgeTimer();
+
+
+
+
+
+
+
+
+
 
 
 
