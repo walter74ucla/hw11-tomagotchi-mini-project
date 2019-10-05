@@ -197,7 +197,7 @@ $('form').on('submit', (e) => {
     // console.log($('#input-box').val());
     petName = $('#input-box').val();
     const $petName = $('#petName');
-    $petName.text(petName);// adds pet name to the DOM   
+    $petName.text(`Your pet's name is ${petName}`);// adds pet name to the DOM   
     pet.name = petName;// updates Tamagotchi name
     pet.setAgeTimer();
     pet.setHungerTimer();
