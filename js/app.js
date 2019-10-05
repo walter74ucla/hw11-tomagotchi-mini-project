@@ -173,9 +173,9 @@ class Tamagotchi {
   morphPet(){
     if(this.alive){
       if(this.age === 5){
-        $('#tampic').attr("src","basketballbruin.png");   
+        $('#tampic').attr('src','https://i.imgur.com/gEnud9A.png');   
       } else if(this.age === 10){
-          $('#tampic').attr('src', 'footballbruin.png');
+          $('#tampic').attr('src', 'https://i.imgur.com/8sMCXzf.png');
         }
     }
   }
