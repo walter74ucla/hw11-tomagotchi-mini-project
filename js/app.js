@@ -43,26 +43,6 @@ class Tamagotchi {
     this.alive = true; // tracks if pet is dead or alive
   }
 
-  changeName(name){
-    //change the name in this.name
-    //change the name in the DOM
-  }
-
-  changeHunger(hunger){
-
-  }
-
-  changeSleepiness(sleepiness){
-
-  }
-
-  changeBoredom(boredom){
-
-  }
-
-  changeAge(age){
-
-  }
 // Increase your pet's age every x minutes
   setAgeTimer(){     
     // grabbing the age span from html
