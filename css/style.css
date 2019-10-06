@@ -54,5 +54,61 @@
 	vertical-align: middle;
 	line-height: 50px; /* The same as your div height */
 	padding: 10px 0;
+
 	font-size: 40px;
 }
+
+.column-layout {
+	background-color: #3571D0;
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: center;
+	align-items: center;
+}
+
+.images {
+	flex: 2;
+	order: 2;
+	border: 5px solid silver;
+	display: flex;
+	flex-flow: row wrap;
+	
+}
+
+#tampic {
+	margin: auto;
+}
+
+.metrics {
+	flex: 1;
+	order: 1;
+	border: 5px solid orange;
+
+
+}
+
+.buttons {
+	flex: 1;
+	order: 3;
+	border: 5px solid red;
+}
+
+
+
+
+
+/*@media (min-width: 300px) {
+	.column-layout {
+	display: flex;
+	flex-wrap: wrap;
+	}
+}*/
+
+
+
+
+
+
+
+
+
