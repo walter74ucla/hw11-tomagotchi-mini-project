@@ -103,7 +103,7 @@ on game start and end on game end*/
 .metrics {
 	flex: 1;
 	order: 1;
-	/*border: 5px solid orange;*/
+	border: 5px solid orange;
 	height: 400px;
 	display: flex;
 	flex-flow: column wrap;
@@ -117,10 +117,11 @@ on game start and end on game end*/
 	/*border: 2px solid black;*/
 	height: 50px;
 	width: 150px;
-	background: #B3A369;
+	background: rgba(179, 163, 105, 0.8);
 	border-radius: 10px;
 	font-weight: bold;
 	color: #002755;
+	font-size: 25px;
 	text-align: center;
 	vertical-align: middle;
 	line-height: 50px; /* The same as your div height */
