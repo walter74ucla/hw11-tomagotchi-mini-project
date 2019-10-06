@@ -60,6 +60,7 @@
 
 .column-layout {
 	background-color: #3571D0;
+	height: 500px;
 	display: flex;
 	flex-flow: row wrap;
 	justify-content: center;
@@ -70,6 +71,7 @@
 	flex: 2;
 	order: 2;
 	border: 5px solid silver;
+	height: 400px;
 	display: flex;
 	flex-flow: row wrap;
 	
@@ -83,18 +85,64 @@
 	flex: 1;
 	order: 1;
 	border: 5px solid orange;
+	height: 400px;
+	display: flex;
+	flex-flow: column wrap;
+	/*justify-content: space-around;*/
 
+}
 
+#hunger {
+	margin: 10px 10px;
+	flex: 1;
+	border: 2px solid black;
+	/*text-align: center;
+	vertical-align: middle;
+	line-height: 50px;*/ /* The same as your div height */
+}
+
+#sleepiness {
+	margin: 10px;
+	flex: 1;
+	border: 2px solid black;
+}
+
+#boredom {
+	margin: 10px;
+	flex: 1;
+	border: 2px solid black;
+}
+
+#age {
+	margin: 10px;
+	flex: 2;
+	border: 2px solid black;
 }
 
 .buttons {
 	flex: 1;
 	order: 3;
 	border: 5px solid red;
+	height: 400px;
+	display: flex;
+	flex-flow: column wrap;
+
 }
 
+#feedPet {
+	margin: auto;
+	/*flex: 1;*/
+}
 
+#turnOff {
+	margin: auto;
+	/*flex: 1;*/
+}
 
+#play {
+	margin: auto;
+	/*flex: 1;*/
+}
 
 
 /*@media (min-width: 300px) {
