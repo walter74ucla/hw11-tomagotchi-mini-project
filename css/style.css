@@ -4,6 +4,11 @@
 	height: 100px;
 }*/
 
+body {
+	background:url("../UCLA pic.jpg") no-repeat center fixed;
+  	background-size: cover;
+}
+
 
 .form-row {
 	background:#333333;
@@ -59,7 +64,7 @@
 }
 
 .column-layout {
-	background-color: #3571D0;
+	/*background-color: #3571D0;*/
 	height: 500px;
 	display: flex;
 	flex-flow: row wrap;
@@ -70,7 +75,7 @@
 .images {
 	flex: 2;
 	order: 2;
-	border: 5px solid silver;
+	/*border: 5px solid silver;*/
 	height: 400px;
 	display: flex;
 	flex-flow: row wrap;
@@ -88,7 +93,8 @@
   	animation-direction: alternate;
 }
 
-
+/*gotta figure out how to get this to start
+on game start and end on game end*/
 @keyframes moveTamPic {
 	from {left: -200px;}
 	to {left: 200px;}
@@ -97,7 +103,7 @@
 .metrics {
 	flex: 1;
 	order: 1;
-	border: 5px solid orange;
+	/*border: 5px solid orange;*/
 	height: 400px;
 	display: flex;
 	flex-flow: column wrap;
@@ -120,17 +126,6 @@
 	line-height: 50px; /* The same as your div height */
 }
 
-/*#sleepiness {
-	margin: 10px;
-	flex: 1;
-	border: 2px solid black;
-}
-
-#boredom {
-	margin: 10px;
-	flex: 1;
-	border: 2px solid black;
-}*/
 
 #age {
 	margin: 10px auto;
@@ -151,27 +146,31 @@
 .buttons {
 	flex: 1;
 	order: 3;
-	border: 5px solid red;
+	/*border: 5px solid red;*/
 	height: 400px;
 	display: flex;
-	flex-flow: column wrap;
+	flex-direction: column;
+	justify-content: space-between;
 
 }
 
-#feedPet {
-	margin: auto;
-	/*flex: 1;*/
+#feedPet, #turnOff, #play {
+	margin: 10px auto;
+	flex-basis: 25%;
+	box-sizing: border-box;
+	/*border: 2px solid black;*/
+	height: 50px;
+	width: 200px;
+	background: #FAB712;
+	border-radius: 10px;
+	font-weight: bold;
+	color: #004D9F;
+	font-size: 20px;
+	text-align: center;
+	vertical-align: middle;
+	line-height: 50px; /* The same as your div height */
 }
 
-#turnOff {
-	margin: auto;
-	/*flex: 1;*/
-}
-
-#play {
-	margin: auto;
-	/*flex: 1;*/
-}
 
 
 /*@media (min-width: 300px) {
