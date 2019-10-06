@@ -46,8 +46,8 @@
 }
 
 .pet-name {
-	background: gold;
-	color: blue;
+	background: #FFB300;
+	color: #3571D0;
 	width: 100%;
 	height: 50px;
 	text-align: center;
@@ -79,6 +79,17 @@
 
 #tampic {
 	margin: auto;
+	animation-name: moveTamPic;
+  	animation-duration: 5s;
+  	animation-timing-function: linear;
+  	animation-delay: 2s;
+  	animation-iteration-count: infinite;
+  	animation-direction: alternate;
+}
+
+@keyframes moveTamPic {
+	from {left: 0px;}
+	to {left: 500px;}
 }
 
 .metrics {
@@ -88,20 +99,26 @@
 	height: 400px;
 	display: flex;
 	flex-flow: column wrap;
-	/*justify-content: space-around;*/
+	justify-content: center;
 
 }
 
-#hunger {
-	margin: 10px 10px;
-	flex: 1;
-	border: 2px solid black;
-	/*text-align: center;
+#hunger, #sleepiness, #boredom {
+	margin: 10px auto;
+	/*flex: 1;*/
+	/*border: 2px solid black;*/
+	height: 50px;
+	width: 150px;
+	background: #B3A369;
+	border-radius: 10px;
+	font-weight: bold;
+	color: #002755;
+	text-align: center;
 	vertical-align: middle;
-	line-height: 50px;*/ /* The same as your div height */
+	line-height: 50px; /* The same as your div height */
 }
 
-#sleepiness {
+/*#sleepiness {
 	margin: 10px;
 	flex: 1;
 	border: 2px solid black;
@@ -111,12 +128,22 @@
 	margin: 10px;
 	flex: 1;
 	border: 2px solid black;
-}
+}*/
 
 #age {
-	margin: 10px;
-	flex: 2;
-	border: 2px solid black;
+	margin: 10px auto;
+	/*flex: 2;*/
+	/*border: 2px solid black;*/
+	height: 100px;
+	width: 150px;
+	background: #FFC72D;
+	border-radius: 10px;
+	font-weight: bold;
+	color: #051D41;
+	font-size: 30px;
+	text-align: center;
+	vertical-align: middle;
+	line-height: 100px; /* The same as your div height */
 }
 
 .buttons {
